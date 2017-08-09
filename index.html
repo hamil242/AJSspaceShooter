@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://rawgit.com/hiebj/ng-focus-if/master/focusIf.min.js"></script>
+<script src="app.js"></script>
+<script src="Factories/Sprites.js"></script>
+<script src="Services/GameLoop.js"></script>
+<script src="Services/LaserPool.js"></script>
+<script src="Services/EnemyPool.js"></script>
+<script src="Services/Player.js"></script>
+<script src="Services/LoadAssets.js"></script>
+<script src="Services/CollisonDetection.js"></script>
+<script src="Factories/EnemyFactory.js"></script>
+<script src="Factories/ProjectileFactory.js"></script>
+<script src="angular-touch.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+<html>
+<body ng-app="SpaceShooterApp" ng-controller="GameController">
+
+	<div id="box-container">
+		<div id="alignLeft">
+			<div class="livesIcon" ng-repeat="x in lives">
+				<IMG ng-src={{x.source}}></IMG>
+			</div>
+		</div>
+		<div id="alignRight">
+			<label>High Score:{{highScore}}</label>
+			<label>Score:{{score}}</label>
+		</div>
+		<canvas focus-if id="gameCanvas" width="700" height="650" style="border:1px solid #d3d3d3;" tabindex="1" ng-keypress="checkIfEnterKeyWasPressed($event)"></canvas>
+		*Controls: A to move left, D to move right, Space to fire.
+		<div id="alignLeft">
+		<div ng-if='show'>
+			Enter your name and submit your high score.<br>
+			Score:{{score}}  Name:<input ng-model="$parent.name"/> <button ng-click="submitScore()">Submit</button>
+		</div>
+	</div>
+	</div>
+
+</body>
+</html>

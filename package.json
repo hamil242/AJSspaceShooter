@@ -1,0 +1,19 @@
+{
+  "name": "AJSspaceShooter",
+  "version": "0.1.0",
+  "author": "Steve Hamilton",
+  "description": "A Space Shooter Game",
+  "dependencies": {
+    "async": "^1.5.0",
+    "cloudant": "^1.8.0",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.3",
+    "serve-static": "^1.5.0"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
