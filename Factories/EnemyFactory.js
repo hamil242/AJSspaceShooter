@@ -1,6 +1,6 @@
-angular.module('SpaceShooterApp').factory('EnemyFactory', function(GameLoop,Sprite){
+"use strict";
 
-	"use strict";
+angular.module('SpaceShooterApp').factory('EnemyFactory', function(GameLoop,Sprite){
 
 	function Enemy(enemySprite, enemyHitPoints, enemyKillPointValue, enemyHitPointValue){
 		this.moveRight = true;
@@ -8,6 +8,7 @@ angular.module('SpaceShooterApp').factory('EnemyFactory', function(GameLoop,Spri
 		this.sprite = enemySprite;
 		this.killPointValue = enemyKillPointValue;
 		this.hitPointValue = enemyHitPointValue;
+		this.enemyData = [];
 	};
 
 	Enemy.prototype.enemyShipHit = function(){
